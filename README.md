@@ -1,8 +1,8 @@
 #### Requirements
 
-* Git
+* git
 
-* Kitty
+* kitty
 
 * feh
 

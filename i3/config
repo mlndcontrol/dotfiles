@@ -195,7 +195,7 @@ default_border pixel 0
 # exec xrandr --output Virtual-1 --mode 1920x1080 --pos 1920x0 
 
 # bg 
-# exec_always feh -bg-fill $HOME/.config/bg_feh/logo.jpg
+# exec_always --no-startup-id feh --bg-fill $HOME/.config/bg_feh/logo.jpg
 
 # polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
