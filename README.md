@@ -1,0 +1,25 @@
+#### Requirements
+
+* Git
+
+* Kitty
+
+* feh
+
+* polybar
+
+* xorg-xrandr(optional)
+
+#### Installation 
+
+clone the repo
+
+```shell 
+git clone https://github.com/mlndcontrol/dotfiles
+``` 
+cd & start bash script
+
+```shell
+cd dotfiles && ./quick_start.sh
+```
+
