@@ -200,3 +200,6 @@ default_border pixel 0
 # polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# picom 
+# exec_always --no-startup-id picom -b 
+

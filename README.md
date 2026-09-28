@@ -8,6 +8,8 @@
 
 * polybar
 
+* picom
+
 * xorg-xrandr(optional)
 
 #### Installation 
