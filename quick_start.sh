@@ -7,4 +7,4 @@ mv i3 "$HOME/.config/"
 mv kitty "$HOME/.config/"
 mv polybar "$HOME/.config/"
 
-echo "you can reboot pc or press mod+shift+r"
+echo "you can reboot pc"
