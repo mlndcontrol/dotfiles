@@ -203,3 +203,5 @@ default_border pixel 0
 # picom 
 # exec_always --no-startup-id picom -b 
 
+# us / ru layout
+# exec_always --no-startup-id setxkbmap -layout us,ru -option grp:win_space_toggle
