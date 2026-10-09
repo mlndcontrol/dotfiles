@@ -1,73 +1,36 @@
 #!/bin/bash
-config_list=("bg_feh" "i3" "kitty" "polybar" "picom")
+config_dependencies_list=("bg_feh" "i3" "kitty" "polybar" "picom")
+config_names_list=("qiyana_config" "blue_win_config")
 
 rm -rf .git
 
 function config_setup {
-    echo " 1 = green conf / 2 - blue conf"
+    for config in "${config_list[@]}"; do
+        echo "Сonfiguration name: $config is available"
+    done
+
     read -p "choose a config: " user_config_choose
 
-    case $user_config_choose in
-        1)
-            for item in "${config_list[@]}"; do
+    for item in "${config_dependencies_list[@]}"; do 
+        case "$item" in 
+            "bg_feh")
+                for config_jpg_name in "${config_names_list[@]}"; do
+                    if [[ "${user_config_choose}.jpg" == "${config_jpg_name}.jpg" ]]; then
+                        mv "${user_config_choose}.jpg" "${item}.conf"
+                    fi
+                done
+                ;;
 
-                if [[ "$item" == "bg_feh" ]]; then
-                    cd $item
-                    rm blue_logo.jpg
-                    mv green_logo.jpg logo.jpg 
-                    cd ..
+            "i3")
+                for config_i3_name in "${config_names_list[@]}"; do
+                    if [[ "${user_config_choose}.i3wmconf" == "${config_i3_name}.i3wmconf" ]]; then
+                        mv "${user_config_choose}.i3wmconf config
+                    fi
+                done
+                ;;
 
-                elif [[ "$item" == "polybar" ]]; then
-                    cd $item 
-                    rm blue
-                    mv green config.ini
-                    cd ..
+        esac
 
-                elif [[ "$item" == "kitty" ]]; then
-                    cd $item 
-                    rm blue_kitty blue_kitty_theme
-                    mv green_kitty kitty.conf
-                    mv green_kitty_theme theme.conf
-                    cd ..
-
-                else 
-                    cd $item && rm blue
-                    mv green "${item}.conf"
-                    cd ..
-                fi
-            done
-
-            ;;
-
-        2) 
-            for item in "${config_list[@]}"; do
-
-                if [[ "$item" == "bg_feh" ]]; then
-                    cd $item
-                    rm green_logo.jpg
-                    mv blue_logo.jpg logo.jpg
-                    cd ..
-
-                elif [[ "$item" == "polybar" ]]; then
-                    cd $item
-                    rm green
-                    mv green config.ini
-                    cd ..
-
-                elif [[ "$item" == "kitty" ]]; then
-                    cd $item
-                    rm green_kitty green_kitty_theme
-                    mv blue_kitty kitty.conf
-                    mv blue_kitty_theme theme.conf
-
-                else
-                    cd $item && rm green
-                    mv blue "${item}.conf"
-                    cd ..
-                fi
-            done
-            ;;
-    esac
 }
 
 
@@ -96,14 +59,6 @@ EOF
         2)
 
             config_setup
-
-            for item in "${config_list[@]}"; do
-                mv $item $HOME/.config/
-                echo "item: $item moved to .config dir"
-            done
-
-            read -p "You can exit the installer & reboot pc"
-
             ;;
 
         3)
