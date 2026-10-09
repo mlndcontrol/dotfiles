@@ -43,7 +43,7 @@ function config_setup {
                         mv "${user_config_choose}.kittyconf" kitty.conf
                         mv "${user_config_choose}.kittytheme" theme.conf
 
-                        mkdir $USER/.config/$item
+                        mkdir $HOME/.config/$item
                         cp kitty.conf $HOME/.config/$item
                         cp theme.conf $HOME/.config/$item
                     fi
