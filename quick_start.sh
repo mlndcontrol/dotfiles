@@ -14,22 +14,27 @@ function config_setup {
     for item in "${config_dependencies_list[@]}"; do 
         case "$item" in 
             "bg_feh")
+                cd $item
                 for config_jpg_name in "${config_names_list[@]}"; do
                     if [[ "${user_config_choose}.jpg" == "${config_jpg_name}.jpg" ]]; then
-                        mv "${user_config_choose}.jpg" "${item}.conf"
+                        mv "${user_config_choose}.jpg" logo.jpg
                     fi
                 done
+                cd ..
                 ;;
 
             "i3")
+                cd $item
                 for config_i3_name in "${config_names_list[@]}"; do
                     if [[ "${user_config_choose}.i3wmconf" == "${config_i3_name}.i3wmconf" ]]; then
-                        mv "${user_config_choose}.i3wmconf config
+                        mv "${user_config_choose}.i3wmconf" config
                     fi
                 done
+                cd ..
                 ;;
 
         esac
+    done 
 
 }
 
