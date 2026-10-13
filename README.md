@@ -2,15 +2,7 @@
 
 * git
 
-* kitty
-
-* feh
-
-* polybar
-
-* picom
-
-* xorg-xrandr(optional)
+* xorg-xrandr (I use it in all i3 conf files)
 
 #### Installation 
 
@@ -19,6 +11,13 @@ clone the repo
 ```shell 
 git clone https://github.com/mlndcontrol/dotfiles
 ``` 
+
+remove the .git folder so you can add it to your own repo
+
+```shell
+rm -rf .git
+```
+
 cd & start bash script
 
 ```shell

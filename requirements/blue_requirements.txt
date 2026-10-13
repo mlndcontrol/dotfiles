@@ -1,0 +1,2 @@
+kitty
+font: ttf-libiration

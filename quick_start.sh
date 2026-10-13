@@ -1,13 +1,15 @@
 #!/bin/bash
 config_dependencies_list=("bg_feh" "i3" "kitty" "polybar" "picom")
-config_names_list=("qiyana_config" "blue_win_config")
+config_names_list=("qiyana_config" "blue")
 
-rm -rf .git
-
-function config_setup {
+function print_configs_list {
     for config in "${config_names_list[@]}"; do
         echo "Сonfiguration name: $config is available"
     done
+}
+
+function config_setup {
+    print_configs_list
 
     read -p "choose a config: " user_config_choose
 
@@ -84,27 +86,18 @@ function config_setup {
 while true
 do
     clear
-    echo " 1 - About configs"
+    echo " 1 - Active configurations list"
     echo " 2 - Install config"
     echo " 3 - Exit"
     read -p ": " user_input
 
-
     case $user_input in 
-        1)
-            cat << 'EOF'
-
-The dotfiles repo contains two configurations:
-1 – qiya conf
-2 – blue_win conf
-To download a config: Install config -> select the configuration.
-
-EOF
-
-            read -p "Press any button..."
+        1) 
+            echo "Conf list: "
+            print_configs_list
+            read -p "Press the Enter..."
             ;;
         2)
-
             config_setup
             ;;
 
@@ -114,7 +107,4 @@ EOF
     esac
 
 done 
-
-
-
 
