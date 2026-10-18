@@ -1,4 +1,5 @@
 font_size 14
+font_family LiberationMono
 
 include ./theme.conf
 
