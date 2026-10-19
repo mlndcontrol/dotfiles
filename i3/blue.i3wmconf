@@ -196,3 +196,7 @@ default_border pixel 1
 
 # us / ru layout
 # exec_always --no-startup-id setxkbmap -layout us,ru -option grp:win_space_toggle
+
+# feh 
+# exec_always --no-startup-id feh --bg-fill $HOME/.config/bg_feh/logo.jpg
+#

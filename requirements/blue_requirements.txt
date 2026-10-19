@@ -1,2 +1,3 @@
 kitty
+feh
 font: ttf-libiration
