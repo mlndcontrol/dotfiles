@@ -9,7 +9,7 @@
 clone the repo
 
 ```shell 
-git clone https://github.com/mlndcontrol/dotfiles
+git clone https://github.com/qiyariko/dotfiles
 ``` 
 
 remove the .git folder so you can add it to your own repo
